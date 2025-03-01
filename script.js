@@ -34,3 +34,25 @@ document.addEventListener("visibilitychange", () => {
         clearInterval(interval);
     }
 });
+
+if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("sw.js").then(reg => {
+        console.log("Service Worker Terdaftar!", reg);
+    });
+}
+
+// Event Click untuk Notifikasi
+document.querySelector("button").addEventListener("click", () => {
+    Notification.requestPermission().then(perm => {
+        if (perm === "granted") {
+            navigator.serviceWorker.ready.then(reg => {
+                reg.showNotification("Example notification", {
+                    body: Math.random(),
+                    icon: "Logo Centered.png",
+                    tag: "Welcome Message",
+                    requireInteraction: true // Agar tetap muncul di notification bar
+                });
+            });
+        }
+    });
+});
