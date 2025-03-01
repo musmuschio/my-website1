@@ -1,11 +1,6 @@
-self.addEventListener("push", event => {
-    const options = {
-        body: "Ini adalah notifikasi persistent di ponsel!",
-        icon: "Logo Centered.png",
-        tag: "PersistentNotification",
-        requireInteraction: true // Notifikasi tidak akan otomatis hilang
-    };
+self.addEventListener("notificationclick", event => {
+    event.notification.close();
     event.waitUntil(
-        self.registration.showNotification("Notifikasi Persistent", options)
+        clients.openWindow("https://github.com") // Ganti dengan link tujuan
     );
 });
