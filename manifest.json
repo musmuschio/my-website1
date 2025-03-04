@@ -21,6 +21,57 @@
       "type": "image/png"
     }
   ],
-  "screenshots": [],
-  "launch_handler": {}
+  "screenshots": [
+    {
+      "src": "/screenshot1.png",
+      "sizes": "1080x1920",
+      "type": "image/png"
+    },
+    {
+      "src": "/screenshot2.png",
+      "sizes": "1080x1920",
+      "type": "image/png"
+    }
+  ],
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  },
+  "protocol_handlers": [
+    {
+      "protocol": "web+myapp",
+      "url": "/?link=%s"
+    }
+  ],
+  "file_handlers": [
+    {
+      "action": "/open",
+      "accept": {
+        "application/pdf": [".pdf"]
+      }
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=com.example.myapp"
+    }
+  ],
+  "prefer_related_applications": false,
+  "categories": ["education", "productivity"],
+  "iarc_rating_id": "e10+",
+  "shortcuts": [
+    {
+      "name": "Buka Dashboard",
+      "short_name": "Dashboard",
+      "description": "Buka halaman utama aplikasi",
+      "url": "/dashboard",
+      "icons": [
+        {
+          "src": "/shortcut-icon.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    }
+  ]
 }
